@@ -26,8 +26,8 @@ export default class XWalletBackupImportModal extends MixinModal(XElement) {
 
     listeners() {
         return {
-            'x-backup-import': async (k) => (await accountManager).importFile(k),
-            'click a[secondary]': async () => (await accountManager).importWords()
+            'x-backup-import': (k) => accountManager.importFile(k),
+            'click a[secondary]': () => accountManager.importWords()
         }
     }
 
